@@ -1,7 +1,14 @@
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 export default function VsRobotoCondensedPage() {
   return (
+    <>
+      <SEO 
+        title="Arial Narrow vs Roboto Condensed — Which is Better?"
+        description="Compare Arial Narrow and Roboto Condensed side-by-side. See differences in design, spacing, and learn which font fits your project best."
+        keywords={['Arial Narrow vs Roboto Condensed', 'Roboto Condensed vs Arial Narrow', 'font comparison']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="heading-2 mb-4">Arial Narrow vs Roboto Condensed</h1>
