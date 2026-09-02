@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if user already accepted or declined
     const consent = localStorage.getItem('ga_consent');
     if (!consent) {
       setIsVisible(true);
@@ -17,9 +17,8 @@ export function CookieBanner() {
     localStorage.setItem('ga_consent', 'granted');
     setIsVisible(false);
     
-    // Update Google Consent
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
         'analytics_storage': 'granted',
         'ad_storage': 'granted',
         'ad_user_data': 'granted',
@@ -41,12 +40,9 @@ export function CookieBanner() {
         <div className="text-sm text-muted-foreground text-center sm:text-left">
           <p>
             We use cookies to analyze traffic and improve your experience on our website.
-            <button 
-              onClick={() => window.open('/privacy', '_blank')}
-              className="ml-1 text-primary hover:underline"
-            >
+            <Link href="/privacy" className="text-primary hover:underline ml-1">
               Learn more
-            </button>
+            </Link>
           </p>
         </div>
         <div className="flex gap-2 flex-shrink-0">
