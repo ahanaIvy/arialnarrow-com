@@ -1,7 +1,14 @@
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 export default function InstallPage() {
   return (
+    <>
+      <SEO 
+        title="Arial Narrow Installation — Windows & Mac Guide"
+        description="Step-by-step guide to install Arial Narrow on Windows and Mac. Learn where to find the font and how to install it correctly."
+        keywords={['Arial Narrow installation', 'install Arial Narrow', 'Arial Narrow Windows', 'Arial Narrow Mac']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="heading-2 mb-4">Arial Narrow Installation</h1>
