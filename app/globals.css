@@ -97,7 +97,8 @@
     @apply text-xl sm:text-2xl font-bold tracking-tight;
   }
 
-  .prose-custom {
+  /* Remove prose-custom if not using typography plugin */
+  /* .prose-custom {
     @apply prose prose-slate max-w-none;
-  }
+  } */
 }
