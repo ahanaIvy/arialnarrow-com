@@ -10,8 +10,11 @@ export const metadata: Metadata = {
   },
   description: 'Arial Narrow font preview, generator, styles, alternatives, CSS guide, license information, and installation instructions.',
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: { url: '/apple-touch-icon.png' },
   },
 };
 
