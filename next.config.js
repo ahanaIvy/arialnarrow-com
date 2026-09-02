@@ -9,10 +9,18 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  // Remove optimizeCss if causing issues
-  // experimental: {
-  //   optimizeCss: true,
-  // },
+  // Configure webpack to handle html2canvas
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+    return config;
+  },
   async headers() {
     return [
       {
