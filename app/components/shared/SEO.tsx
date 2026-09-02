@@ -8,24 +8,21 @@ interface SEOProps {
   ogType?: 'website' | 'article';
   noindex?: boolean;
   keywords?: string[];
-  articlePublishedTime?: string;
-  articleModifiedTime?: string;
 }
 
-const defaultImage = 'https://arialnarrow.com/images/og-default.jpg';
+
+const defaultImage = 'https://arialnarrow.com/images/social.png';
 
 export function SEO({ 
   title, 
   description, 
   canonical, 
-  ogImage = defaultImage,
+  ogImage = defaultImage, /
   ogType = 'website',
   noindex = false,
   keywords = [],
-  articlePublishedTime,
-  articleModifiedTime,
 }: SEOProps) {
-  const fullTitle = `${title} | ArialNarrow.com`;
+  const fullTitle = title.includes('|') ? title : `${title} | ArialNarrow.com`;
   const canonicalUrl = canonical || `https://arialnarrow.com${typeof window !== 'undefined' ? window.location.pathname : ''}`;
 
   return (
@@ -51,7 +48,7 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={ogImage} /> {/* ✅ Ab social.png use hogi */}
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="ArialNarrow.com" />
@@ -62,21 +59,7 @@ export function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       
-      {/* Article metadata */}
-      {ogType === 'article' && articlePublishedTime && (
-        <>
-          <meta property="article:published_time" content={articlePublishedTime} />
-          {articleModifiedTime && (
-            <meta property="article:modified_time" content={articleModifiedTime} />
-          )}
-        </>
-      )}
-      
-      {/* Viewport */}
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      
-      {/* Theme color */}
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="theme-color" content="#2563eb" />
     </Head>
   );
 }
