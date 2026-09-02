@@ -36,37 +36,38 @@ export default function AlternativesPage() {
         description="Discover the best alternatives to Arial Narrow including free and commercial options. Compare Roboto Condensed, Helvetica Condensed, and more."
         keywords={['Arial Narrow alternatives', 'fonts like Arial Narrow', 'similar fonts']}
       />
-    <Container className="py-8 md:py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="heading-2 mb-4">Arial Narrow Alternatives</h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          If Arial Narrow isn't the right fit, here are some excellent alternatives.
-        </p>
+      <Container className="py-8 md:py-12">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="heading-2 mb-4">Arial Narrow Alternatives</h1>
+          <p className="text-lg text-muted-foreground mb-8">
+            If Arial Narrow isn't the right fit, here are some excellent alternatives.
+          </p>
 
-        <div className="space-y-6">
-          {alternatives.map((alt, index) => (
-            <div key={index} className="border border-border rounded-xl p-6 bg-white hover:shadow-md transition-shadow">
-              <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                <h2 className="text-xl font-bold">{alt.name}</h2>
-                <span className="text-xs bg-secondary px-3 py-1 rounded-full text-muted-foreground">
-                  {alt.license}
-                </span>
+          <div className="space-y-6">
+            {alternatives.map((alt, index) => (
+              <div key={index} className="border border-border rounded-xl p-6 bg-white hover:shadow-md transition-shadow">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                  <h2 className="text-xl font-bold">{alt.name}</h2>
+                  <span className="text-xs bg-secondary px-3 py-1 rounded-full text-muted-foreground">
+                    {alt.license}
+                  </span>
+                </div>
+
+                <p className="text-sm text-muted-foreground mb-3">{alt.description}</p>
+
+                <a
+                  href={alt.link}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Learn more →
+                </a>
               </div>
-
-              <p className="text-sm text-muted-foreground mb-3">{alt.description}</p>
-
-              <a
-                href={alt.link}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                className="text-sm text-primary hover:underline"
-              >
-                Learn more →
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 }
