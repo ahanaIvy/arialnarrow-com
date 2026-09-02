@@ -1,7 +1,14 @@
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 export default function VsArialPage() {
   return (
+    <>
+      <SEO 
+        title="Arial Narrow vs Arial — Which Font Should You Use?"
+        description="Detailed comparison of Arial Narrow vs Arial. See side-by-side examples, width differences, and learn when to use each font."
+        keywords={['Arial Narrow vs Arial', 'Arial comparison', 'Arial vs Arial Narrow']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="heading-2 mb-4">Arial Narrow vs Arial</h1>
