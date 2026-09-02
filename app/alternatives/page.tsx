@@ -11,7 +11,7 @@ const alternatives = [
     name: 'Open Sans Condensed',
     license: 'Apache 2.0 (Free)',
     description: 'A highly legible condensed variant of Open Sans.',
-    link: 'https://fonts.google.com/specimen/Open+Sans+Condensed',
+    link: 'https://dafontstyle.io/download/open-sans-font.html',
   },
   {
     name: 'Helvetica Condensed',
@@ -51,7 +51,7 @@ export default function AlternativesPage() {
               <a
                 href={alt.link}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-sm text-primary hover:underline"
               >
                 Learn more →
