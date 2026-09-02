@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';  // ← This import is missing!
 import './globals.css';
 import { Header } from '@/app/components/ui/Header';
 import { Footer } from '@/app/components/ui/Footer';
+import { CookieBanner } from '@/app/components/CookieBanner';
 
 export const metadata: Metadata = {
   title: {
@@ -10,11 +12,8 @@ export const metadata: Metadata = {
   },
   description: 'Arial Narrow font preview, generator, styles, alternatives, CSS guide, license information, and installation instructions.',
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: { url: '/apple-touch-icon.png' },
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -26,13 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-               {/* Consent Mode Default - before anything else */}
+        {/* Consent Mode Default - before anything else */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             
-            // Default: Sab kuch denied
             gtag('consent', 'default', {
               'analytics_storage': 'denied',
               'ad_storage': 'denied',
@@ -41,10 +39,12 @@ export default function RootLayout({
             });
           `}
         </Script>
-   
+
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XJTCP037GJ"
           strategy="afterInteractive"
@@ -58,7 +58,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Cookie Banner Component */}
         <CookieBanner />
       </body>
     </html>
