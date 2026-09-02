@@ -44,3 +44,4 @@ npm run build
 
 # Start production server
 npm start
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel)](https://arialnarrow.com)
