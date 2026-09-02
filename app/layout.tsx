@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     template: '%s | ArialNarrow.com',
   },
   description: 'Arial Narrow font preview, generator, styles, alternatives, CSS guide, license information, and installation instructions.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: { url: '/apple-touch-icon.png' },
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
