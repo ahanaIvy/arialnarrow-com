@@ -19,6 +19,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'ArialNarrow.com',
+              url: 'https://arialnarrow.com',
+              description: 'The definitive resource hub for Arial Narrow — typography, preview tools, comparisons, and implementation guides.',
+              about: {
+                '@type': 'Thing',
+                name: 'Arial Narrow Font',
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="flex flex-col min-h-screen">
         <Script id="consent-default" strategy="beforeInteractive">
           {`
