@@ -22,18 +22,7 @@ The definitive resource hub for Arial Narrow — a comprehensive, high-quality t
 
 
 
----
 
-### Summary
-
-| Item | Value |
-|------|-------|
-| **Repository Name** | `arialnarrow-com` |
-| **Short Description** | The definitive resource hub for Arial Narrow — preview, compare, learn, and implement. |
-| **Topics** | `arial-narrow`, `typography`, `font-preview`, `font-generator`, `nextjs`, `typescript`, `tailwindcss`, `font-comparison`, `web-fonts` |
-| **License** | MIT (for the code) |
-| **Deployment** | Vercel |
-| **URL** | https://arialnarrow.com |
 
 ## 🚀 Quick Start
 
