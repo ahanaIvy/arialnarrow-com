@@ -26,18 +26,40 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJTCP037GJ"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+               {/* Consent Mode Default - before anything else */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
             
-              gtag('config', 'G-XJTCP037GJ');
-            </script>
+            // Default: Sab kuch denied
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied'
+            });
+          `}
+        </Script>
+   
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XJTCP037GJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XJTCP037GJ');
+          `}
+        </Script>
+
+        {/* Cookie Banner Component */}
+        <CookieBanner />
       </body>
     </html>
   );
