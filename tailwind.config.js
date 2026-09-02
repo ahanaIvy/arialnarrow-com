@@ -41,16 +41,18 @@ module.exports = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: '65ch',
-          },
-        },
-      },
+      // Remove @tailwindcss/typography if not using
+      // typography: {
+      //   DEFAULT: {
+      //     css: {
+      //       maxWidth: '65ch',
+      //     },
+      //   },
+      // },
     },
   },
+  // Remove the typography plugin if not needed
   plugins: [
-    require('@tailwindcss/typography'),
+    // require('@tailwindcss/typography'), // Comment this out if not needed
   ],
 };
