@@ -1,5 +1,6 @@
 import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
+import Link from 'next/link';
 
 export default function CSSPage() {
   return (
@@ -9,18 +10,18 @@ export default function CSSPage() {
         description="Complete guide to using Arial Narrow on the web with CSS. Learn @font-face implementation, font-family syntax, and web font licensing."
         keywords={['Arial Narrow CSS', 'Arial Narrow webfont', '@font-face']}
       />
-    <Container className="py-8 md:py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="heading-2 mb-4">Arial Narrow CSS Guide</h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          Complete guide to using Arial Narrow on the web with CSS.
-        </p>
+      <Container className="py-8 md:py-12">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="heading-2 mb-4">Arial Narrow CSS Guide</h1>
+          <p className="text-lg text-muted-foreground mb-8">
+            Complete guide to using Arial Narrow on the web with CSS.
+          </p>
 
-        <div className="space-y-6">
-          <div className="border border-border rounded-xl p-6 bg-white">
-            <h2 className="text-xl font-bold mb-3">Basic CSS Usage</h2>
-            <pre className="bg-secondary/30 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`.text-arial-narrow {
+          <div className="space-y-6">
+            <div className="border border-border rounded-xl p-6 bg-white">
+              <h2 className="text-xl font-bold mb-3">Basic CSS Usage</h2>
+              <pre className="bg-secondary/30 p-4 rounded-lg overflow-x-auto text-sm">
+                <code>{`.text-arial-narrow {
   font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -28,13 +29,13 @@ export default function CSSPage() {
   font-family: 'Arial Narrow Bold', 'Arial Narrow', Arial, sans-serif;
   font-weight: 700;
 }`}</code>
-            </pre>
-          </div>
+              </pre>
+            </div>
 
-          <div className="border border-border rounded-xl p-6 bg-white">
-            <h2 className="text-xl font-bold mb-3">@font-face Implementation</h2>
-            <pre className="bg-secondary/30 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`@font-face {
+            <div className="border border-border rounded-xl p-6 bg-white">
+              <h2 className="text-xl font-bold mb-3">@font-face Implementation</h2>
+              <pre className="bg-secondary/30 p-4 rounded-lg overflow-x-auto text-sm">
+                <code>{`@font-face {
   font-family: 'Arial Narrow';
   src: url('/fonts/ArialNarrow.woff2') format('woff2');
   font-weight: 400;
@@ -49,17 +50,21 @@ export default function CSSPage() {
   font-style: normal;
   font-display: swap;
 }`}</code>
-            </pre>
-          </div>
+              </pre>
+            </div>
 
-          <div className="p-6 bg-amber-50 border border-amber-200 rounded-xl">
-            <h2 className="text-xl font-bold text-amber-800 mb-2">Important</h2>
-            <p className="text-sm text-amber-700">
-              Ensure you have a proper web font license from Monotype before using Arial Narrow on the web.
-            </p>
+            <div className="p-6 bg-amber-50 border border-amber-200 rounded-xl">
+              <h2 className="text-xl font-bold text-amber-800 mb-2">Important</h2>
+              <p className="text-sm text-amber-700">
+                Ensure you have a proper web font license from Monotype before using Arial Narrow on the web.
+                <Link href="/license" className="text-primary hover:underline ml-1">
+                  Learn more about licensing →
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 }
