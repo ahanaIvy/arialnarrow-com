@@ -1,7 +1,14 @@
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 export default function LicensePage() {
   return (
+    <>
+      <SEO 
+        title="Arial Narrow Licensing — What You Need to Know"
+        description="Understand the licensing of Arial Narrow. Learn about desktop, web, and distribution licenses. Find legitimate sources for acquiring the font."
+        keywords={['Arial Narrow license', 'Arial Narrow commercial license', 'web font license']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-3xl mx-auto">
         <h1 className="heading-2 mb-4">Arial Narrow Licensing</h1>
