@@ -24,6 +24,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Dynamic Canonical URL */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Set canonical URL dynamically
+              const canonicalLink = document.createElement('link');
+              canonicalLink.rel = 'canonical';
+              canonicalLink.href = window.location.href.split('?')[0];
+              document.head.appendChild(canonicalLink);
+            `,
+          }}
+        />
+      </head>
       <body className="flex flex-col min-h-screen">
         <Script id="consent-default" strategy="beforeInteractive">
           {`
