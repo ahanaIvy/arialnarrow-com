@@ -82,3 +82,7 @@
     @apply text-2xl sm:text-3xl font-bold tracking-tight;
   }
 }
+interface Window {
+  gtag: (...args: any[]) => void;
+  dataLayer: any[];
+}
