@@ -1,3 +1,7 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+
+# Sitemap
+Sitemap: https://arialnarrow.com/sitemap.xml
