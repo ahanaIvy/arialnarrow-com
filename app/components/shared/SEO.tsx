@@ -10,14 +10,13 @@ interface SEOProps {
   keywords?: string[];
 }
 
-
 const defaultImage = 'https://arialnarrow.com/images/social.png';
 
 export function SEO({ 
   title, 
   description, 
   canonical, 
-  ogImage = defaultImage, /
+  ogImage = defaultImage,
   ogType = 'website',
   noindex = false,
   keywords = [],
@@ -48,7 +47,7 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={ogImage} /> {/* ✅ Ab social.png use hogi */}
+      <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="ArialNarrow.com" />
