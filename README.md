@@ -7,7 +7,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 The definitive resource hub for Arial Narrow — a comprehensive, high-quality typography website.
-
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel)](https://arialnarrow.com)
 ## ✨ Features
 
 - 🎨 **Interactive Font Preview** — Real-time preview with text, size, and style controls
@@ -44,4 +44,4 @@ npm run build
 
 # Start production server
 npm start
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel)](https://arialnarrow.com)
+
