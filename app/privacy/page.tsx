@@ -1,8 +1,15 @@
 
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 export default function PrivacyPage() {
   return (
+    <>
+      <SEO 
+        title="Privacy Policy — ArialNarrow.com"
+        description="Read our privacy policy to understand how we collect, use, and protect your data when you visit ArialNarrow.com."
+        keywords={['privacy policy', 'data protection', 'cookie policy']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="heading-2 mb-6">Privacy Policy</h1>
