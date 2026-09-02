@@ -1,3 +1,4 @@
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 const characters = {
@@ -9,6 +10,12 @@ const characters = {
 
 export default function CharacterMapPage() {
   return (
+    <>
+      <SEO 
+        title="Arial Narrow Character Map — Complete Glyph Set"
+        description="Explore the complete character map of Arial Narrow including uppercase, lowercase, numbers, punctuation, and special symbols."
+        keywords={['Arial Narrow character map', 'Arial Narrow glyphs', 'character set']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="heading-2 mb-4">Arial Narrow Character Map</h1>
