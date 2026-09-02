@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';  // ← YEH IMPORT MISSING THA
+import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/app/components/ui/Header';
 import { Footer } from '@/app/components/ui/Footer';
@@ -25,12 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        {/* Consent Mode Default - before anything else */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            
             gtag('consent', 'default', {
               'analytics_storage': 'denied',
               'ad_storage': 'denied',
@@ -44,7 +42,6 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         
-        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XJTCP037GJ"
           strategy="afterInteractive"
