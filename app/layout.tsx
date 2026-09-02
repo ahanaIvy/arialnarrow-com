@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';  // ← This import is missing!
+import Script from 'next/script';  // ← YEH IMPORT MISSING THA
 import './globals.css';
 import { Header } from '@/app/components/ui/Header';
 import { Footer } from '@/app/components/ui/Footer';
