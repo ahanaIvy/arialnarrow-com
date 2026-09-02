@@ -1,3 +1,4 @@
+import { SEO } from '@/app/components/shared/SEO';
 import { Container } from '@/app/components/ui/Container';
 
 const alternatives = [
@@ -29,6 +30,12 @@ const alternatives = [
 
 export default function AlternativesPage() {
   return (
+    <>
+      <SEO 
+        title="Arial Narrow Alternatives — Best Similar Fonts"
+        description="Discover the best alternatives to Arial Narrow including free and commercial options. Compare Roboto Condensed, Helvetica Condensed, and more."
+        keywords={['Arial Narrow alternatives', 'fonts like Arial Narrow', 'similar fonts']}
+      />
     <Container className="py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="heading-2 mb-4">Arial Narrow Alternatives</h1>
