@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/app/components/ui/Header';
 import { Footer } from '@/app/components/ui/Footer';
 import { CookieBanner } from '@/app/components/CookieBanner';
+import { Canonical } from '@/app/components/shared/Canonical';
 
 export const metadata: Metadata = {
   title: {
@@ -25,8 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* ✅ Better: HTML canonical (static but dynamic via Next.js) */}
-        <link rel="canonical" href="https://arialnarrow.com" />
+        <Canonical />
       </head>
       <body className="flex flex-col min-h-screen">
         <Script id="consent-default" strategy="beforeInteractive">
