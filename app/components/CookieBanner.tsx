@@ -10,6 +10,15 @@ export function CookieBanner() {
     const consent = localStorage.getItem('ga_consent');
     if (!consent) {
       setIsVisible(true);
+    } else if (consent === 'granted') {
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted'
+        });
+      }
     }
   }, []);
 

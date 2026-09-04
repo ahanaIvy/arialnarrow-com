@@ -1,5 +1,20 @@
-import { SEO } from '@/app/components/shared/SEO';
+import type { Metadata } from 'next';
 import { Container } from '@/app/components/ui/Container';
+import { Breadcrumbs } from '@/app/components/ui/Breadcrumbs';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Arial Narrow Font Styles — Regular, Bold, Italic & Bold Italic',
+  description: 'Preview and compare all 4 official Arial Narrow font styles: Regular (400), Bold (700), Italic, and Bold Italic. Typography specimens, CSS values, and glyphs.',
+  alternates: {
+    canonical: '/style',
+  },
+  openGraph: {
+    title: 'Arial Narrow Font Styles — Regular, Bold, Italic & Bold Italic',
+    description: 'Compare all 4 official Arial Narrow font styles: Regular, Bold, Italic, and Bold Italic with CSS values and live specimens.',
+    url: 'https://arialnarrow.com/style',
+  },
+};
 
 const styles = [
   {
@@ -38,68 +53,62 @@ const styles = [
 
 export default function StylesPage() {
   return (
-    <>
-      <SEO 
-        title="Arial Narrow Styles — Regular, Bold, Italic & Bold Italic"
-        description="Explore all available styles of Arial Narrow: Regular, Bold, Italic, and Bold Italic. See previews, descriptions, and best use cases."
-        keywords={['Arial Narrow styles', 'Arial Narrow Regular', 'Arial Narrow Bold', 'Arial Narrow Italic']}
-      />
-      <Container className="py-8 md:py-12">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="heading-2 mb-4">Arial Narrow Styles</h1>
-          <p className="text-lg text-muted-foreground mb-10">
-            Explore all available styles of Arial Narrow.
-          </p>
+    <Container className="py-8 md:py-12">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
+        <h1 className="heading-2 mt-2 mb-4">Arial Narrow Styles</h1>
+        <p className="text-lg text-muted-foreground mb-10">
+          Explore all available styles of Arial Narrow with typographic specimens and usage recommendations.
+        </p>
 
-          <div className="space-y-10">
-            {styles.map((style) => (
-              <section key={style.name} className="border border-border rounded-xl p-6 md:p-8 bg-white shadow-sm">
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <h2 className="text-2xl font-bold tracking-tight">
-                    {style.name}
-                  </h2>
-                  <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
-                    {style.weight} • {style.style}
-                  </span>
-                </div>
-                
-                <div
-                  className="p-6 rounded-lg bg-secondary/20 border border-border mb-4"
-                  style={{
-                    fontFamily: `"Arial Narrow ${style.name}", "Arial Narrow", Arial, sans-serif`,
-                    fontWeight: style.weight,
-                    fontStyle: style.style,
-                    fontSize: '32px',
-                    letterSpacing: '1px',
-                  }}
-                >
-                  <p className="break-words">{style.preview}</p>
-                  <p className="text-sm text-muted-foreground mt-2" style={{ fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
-                    The quick brown fox jumps over the lazy dog
-                  </p>
-                </div>
-
-                <p className="text-muted-foreground text-sm mb-2">
-                  {style.description}
+        <div className="space-y-10">
+          {styles.map((style) => (
+            <section key={style.name} className="border border-border rounded-xl p-6 md:p-8 bg-white shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                <h2 className="text-2xl font-bold tracking-tight">
+                  {style.name}
+                </h2>
+                <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+                  {style.weight} • {style.style}
+                </span>
+              </div>
+              
+              <div
+                className="p-6 rounded-lg bg-secondary/20 border border-border mb-4"
+                style={{
+                  fontFamily: '"Arial Narrow", "Helvetica Neue Condensed", "Nimbus Sans L", sans-serif-condensed, sans-serif',
+                  fontWeight: style.weight,
+                  fontStyle: style.style,
+                  fontSize: '32px',
+                  letterSpacing: '1px',
+                }}
+              >
+                <p className="break-words">{style.preview}</p>
+                <p className="text-sm text-muted-foreground mt-2" style={{ fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
+                  The quick brown fox jumps over the lazy dog
                 </p>
-                <p className="text-sm">
-                  <span className="font-medium">Best use case:</span> {style.useCase}
-                </p>
-              </section>
-            ))}
-          </div>
+              </div>
 
-          <div className="mt-12 p-6 bg-secondary/20 rounded-xl border border-border text-center">
-            <p className="text-sm text-muted-foreground">
-              Want to test these styles with your own text?
-              {' '}
-              <Link href="/preview" className="text-primary hover:underline font-medium">
-                Try the full preview tool →
-              </Link>
-            </p>
-          </div>
+              <p className="text-muted-foreground text-sm mb-2">
+                {style.description}
+              </p>
+              <p className="text-sm">
+                <span className="font-medium">Best use case:</span> {style.useCase}
+              </p>
+            </section>
+          ))}
         </div>
-      </Container>
-    </>
+
+        <div className="mt-12 p-6 bg-secondary/20 rounded-xl border border-border text-center">
+          <p className="text-sm text-muted-foreground">
+            Want to test these styles with your own text?
+            {' '}
+            <Link href="/preview" className="text-primary hover:underline font-medium">
+              Try the full preview tool →
+            </Link>
+          </p>
+        </div>
+      </div>
+    </Container>
   );
 }

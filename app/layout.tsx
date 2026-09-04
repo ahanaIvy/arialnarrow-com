@@ -6,9 +6,65 @@ import { Footer } from '@/app/components/ui/Footer';
 import { CookieBanner } from '@/app/components/CookieBanner';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://arialnarrow.com'),
+  title: {
+    default: 'Arial Narrow Font — Download, Live Preview & SVG Generator',
+    template: '%s | ArialNarrow.com',
+  },
+  description: 'Download Arial Narrow font, preview custom text live, and export vector SVG specimens or CSS @font-face code. Complete typography specs, style weights, and install guide.',
+  keywords: [
+    'Arial Narrow',
+    'Arial Narrow font',
+    'download Arial Narrow font',
+    'Arial Narrow font free download',
+    'Arial Narrow preview',
+    'Arial Narrow SVG generator',
+    'Arial Narrow Bold',
+    'Arial Narrow Italic',
+    'condensed font',
+    'typography',
+    'CSS font-family',
+    'Roboto Condensed',
+  ],
+  authors: [{ name: 'ArialNarrow.com' }],
+  creator: 'ArialNarrow.com',
+  publisher: 'ArialNarrow.com',
   icons: {
     icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    apple: '/icon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://arialnarrow.com',
+    siteName: 'ArialNarrow.com',
+    title: 'Arial Narrow Font — Download, Live Preview & SVG Generator',
+    description: 'Download Arial Narrow font, preview custom text live, and export vector SVG specimens or CSS @font-face code. Complete typography specs and install guide.',
+    images: [
+      {
+        url: '/images/social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Arial Narrow Font Preview & Generator Tool',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Arial Narrow Font — Download, Live Preview & SVG Generator',
+    description: 'Download Arial Narrow font, preview custom text live, and export vector SVG specimens or CSS code.',
+    images: ['/images/social.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

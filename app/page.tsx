@@ -1,29 +1,76 @@
-import { SEO } from '@/app/components/shared/SEO';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { FontPreview } from '@/app/components/preview/FontPreview';
 
+export const metadata: Metadata = {
+  title: 'Arial Narrow Font — Download, Live Preview & SVG Generator',
+  description: 'Download Arial Narrow font, test custom text live, and export vector SVG specimens or CSS @font-face code. View styles, glyph maps, and free alternatives.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Arial Narrow Font — Download, Live Preview & SVG Generator',
+    description: 'Download Arial Narrow font, test custom text live, and export vector SVG specimens or CSS @font-face code.',
+    url: 'https://arialnarrow.com',
+  },
+};
+
+const faqs = [
+  {
+    q: 'What is Arial Narrow?',
+    a: 'Arial Narrow is a condensed version of the Arial typeface, designed by Robin Nicholas and Patricia Saunders for Monotype. It is a sans-serif font that is approximately 20% narrower than standard Arial.',
+  },
+  {
+    q: 'Is Arial Narrow free to use?',
+    a: 'Arial Narrow is included with Windows and Microsoft Office licenses for personal and business use on those platforms. For web fonts, commercial distribution, or use outside of Microsoft products, a separate license from Monotype is required.',
+  },
+  {
+    q: 'How do I install Arial Narrow on Windows?',
+    a: 'Arial Narrow is typically pre-installed with Windows. If missing, it can be obtained through Microsoft Office installation or legitimate font providers like Fonts.com.',
+  },
+  {
+    q: 'How do I use Arial Narrow in CSS?',
+    a: "You can reference Arial Narrow in CSS using font-family: 'Arial Narrow', Arial, sans-serif;. For web use, you'll need to properly license and self-host the font files or use a licensed web font service.",
+  },
+  {
+    q: 'What are the best alternatives to Arial Narrow?',
+    a: 'Popular alternatives include Roboto Condensed (free on Google Fonts), Helvetica Condensed, and Open Sans Condensed. Each offers similar condensed characteristics with different stylistic approaches.',
+  },
+];
+
 export default function Home() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
-      <SEO 
-        title="Arial Narrow"
-        description="Arial Narrow Typeface Preview, compare styles, explore alternatives, get CSS code, and understand licensing."
-        keywords={['Arial Narrow', 'Arial Narrow font', 'font preview', 'typography']}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main>
+      <div className="w-full">
         {/* Hero Section */}
         <section className="py-12 md:py-20 bg-gradient-to-br from-secondary/30 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h1 className="heading-1 text-center mb-4">
-                Arial Narrow
+                Arial Narrow Font
                 <span className="block text-2xl sm:text-3xl font-normal text-muted-foreground mt-2">
-                  The Definitive Resource & Preview Tool
+                  Live Preview, SVG Generator &amp; Download Guide
                 </span>
               </h1>
               <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-                A condensed sans-serif typeface ideal for space-efficient
-                headers, UI elements, and impactful typography.
+                Test custom typography in real-time, generate vector SVG specimens or CSS @font-face code, and download font files or free Google Font alternatives.
               </p>
 
               <div className="bg-white rounded-xl shadow-lg border border-border p-6 md:p-8">
@@ -62,6 +109,7 @@ export default function Home() {
         {/* Quick Info Grid */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="heading-3 text-center mb-8">Arial Narrow at a Glance</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="p-6 rounded-lg border border-border bg-secondary/20">
                 <h3 className="font-semibold text-foreground">What is Arial Narrow?</h3>
@@ -123,28 +171,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-3 text-center mb-10">Frequently Asked Questions</h2>
               <div className="space-y-4">
-                {[
-                  {
-                    q: "What is Arial Narrow?",
-                    a: "Arial Narrow is a condensed version of the Arial typeface, designed by Robin Nicholas and Patricia Saunders for Monotype. It is a sans-serif font that is approximately 20% narrower than standard Arial."
-                  },
-                  {
-                    q: "Is Arial Narrow free to use?",
-                    a: "Arial Narrow is included with Windows and Microsoft Office licenses for personal and business use on those platforms. For web fonts, commercial distribution, or use outside of Microsoft products, a separate license from Monotype is required."
-                  },
-                  {
-                    q: "How do I install Arial Narrow on Windows?",
-                    a: "Arial Narrow is typically pre-installed with Windows. If missing, it can be obtained through Microsoft Office installation or legitimate font providers like Fonts.com."
-                  },
-                  {
-                    q: "How do I use Arial Narrow in CSS?",
-                    a: "You can reference Arial Narrow in CSS using `font-family: 'Arial Narrow', Arial, sans-serif;`. For web use, you'll need to properly license and self-host the font files or use a licensed web font service."
-                  },
-                  {
-                    q: "What are the best alternatives to Arial Narrow?",
-                    a: "Popular alternatives include Roboto Condensed (free on Google Fonts), Helvetica Condensed, and Open Sans Condensed. Each offers similar condensed characteristics with different stylistic approaches."
-                  },
-                ].map((faq, index) => (
+                {faqs.map((faq, index) => (
                   <details key={index} className="group border border-border rounded-lg p-4 open:shadow-sm transition-all">
                     <summary className="flex justify-between items-center cursor-pointer font-medium hover:text-primary transition-colors">
                       {faq.q}
@@ -157,7 +184,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

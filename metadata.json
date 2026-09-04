@@ -1,0 +1,6 @@
+{
+  "name": "Arial Narrow",
+  "description": "Download Arial Narrow font guide, live preview tool, SVG vector export, typography specs, style comparisons, and CSS @font-face implementation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
